@@ -1,0 +1,119 @@
+It's list of git command for configuration
+
+Reinstall git , delete app previos files
+
+1. git config --global user.name yasar
+
+2. git config --global user.email yasarshaikh78657@gmail.com
+
+ git config --global user.name (for check name) 
+ git config --global user.email (for check email) 
+
+3. code.  (for open visual code)
+
+4. git init (for initialize empty git Reposetory)
+
+5. ls -lart (for show all folder, hiden also)
+
+6. git status (maybe we see untracked files)
+
+7. git add filename (add only one  file from untracked to stage)
+
+8. git add -A (for add your all files from untracked to stage)
+
+9. git commit (compulsory we you initiate )
+    one file will open in vim editor here. Now, for type press "i" and write on top of file "Initial commit" (without ""). 
+    After that press Esc, :, w, q, Enter
+
+10.(optional) for creating file from gitbash command = touch filename.extansion
+
+11. if you modify file befor commit and after add then you have to run "git add -A" agai
+
+12. git commit -m "Enter your commit message here" (commite with message)
+
+13. git checkout filename.extansion (For recover that file from last commite same as)
+
+13. git checkout -f (for recover all files from last commit same as)
+
+14. git log (for commit msg and find who did commit)
+
+15. git log -p -1 (for see last one commit and all changes) ,"q" for quit
+
+16. git diff (compair working(untracked) file to stage area file)
+
+17. git diff --staged (compair staging area to last commit)
+
+18. git commit -a -m "your commite message write here" (Direct commite modified file without staging "i mean without git add -a", only when you modified file "i mean you run git add -A command once on that file"). you can see by git log
+
+19. git rm --cached filename.extension (for staged file to untrack,Now only avalible file in hardisk)
+
+20. git rm filename.extansion (for delete file from staged area), after that you have to commit
+
+21. git status -s (for short status), red right M shows us that file is modified and need to add. greed left M shows us that file is in stage area , it's possible that one file have in both places modified and staging if you modifiy after git add -a. At that time you commit  the code means staged file are commited and if you write git add -a then modified file goes to stage area. 
+
+22. make .gitignore file, only by command touch .gitignore (if you want to ignore  some file, you have to write path of that file in .gitignore)
+
+        EX:- /mylogs.log (ignore this file from root path only )
+            *.log    (ignore all and every file form repo,which extension is .log)
+            myfolder/  (ignore myfolder from root path)
+
+#Branch and 2nd Branch
+23. Master is your main branch, If you have to do development then you have to create new separate brench. you can make N number of branches
+
+-for create branch :- git branch writenameofbranch
+    ex:- git branch feature
+
+- for see how many branches we have :-
+    git branch 
+                
+-for switch master to feature :- git checkout feature
+
+-(optional) Create and switch togather :- git checkout -b branchnamehere
+Ex.git checkout -b newbranchNS
+
+-Delete Branch, incase you need :- 
+    git branch -d branchnamehere
+
+
+#branch merge
+24. For merge branch in master branch
+
+1. git checkout master
+2. git merge nameofbranch (Ex. git merge feature) 
+
+
+#GitHub push request from new account
+-It is Hosting Service for git Reposetories,
+
+25. Open github and create new repository
+
+26. git remote add origin HereSSHLinkOfYourRepo (set url/SSHLink in origin )
+    git remote set-url origin HereNewSSHLinkOfYourRepo (Reset)
+
+27. git remote (check remote is origin or not)
+
+28. git remote -v (check push fetch link)
+
+29. git branch -M main (create main branch and open it) 
+
+# 30 to 33 is only for first time when you configur git to github
+
+30. ssh-keygen -t rsa -C "your.email@example.com"
+
+31. eval $(ssh-agent -s)
+
+32. ssh-add ~/.ssh/id_rsa
+
+33. cat ~/.ssh/id_rsa.pub (copy whole key, Go to github/setting/SSH and GPG keys/  (click) new SSH key , paste that key here, give your name submit)
+
+34. git push -u origin main (for push your code on github, -u for next time if you run git push than bydefault origin currentBranch are pushed on github, Once you have to run "git push -u origin Branchnamehere" in every branch )
+
+
+#Github pull request
+
+35. open bash where you want repo
+
+36. git clone RepoLinkPasteHere folderNameHere(opetional)
+    if you want to create new folder, you have to write name of that folder after repo link
+
+37.
